@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    color:rgba(0, 0, 0, 0.845);
+}
+
+body{
+    background: #222;
+}
+.card {
+    width: 90%;
+    max-width: 500px;
+    background: linear-gradient(180deg,rgb(236, 233, 46), rgb(65, 23, 255));
+    padding: 40px 10px;
+    border-radius: 20px;
+    text-align: center;
+    margin: 50px 20px 0;
+    align-content: center;
+    
+}
+.search {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    width: -80px;
+    padding-left: 8px;
+
+}
+
+.search input {
+    border: 0;
+    outline: 0;
+    background: hsla(0, 0%, 100%, 0.70);
+    padding: 10px 20px;
+    height: 60px;
+    border-radius: 25px;
+    color: black;
+    flex: 1;
+    margin-right: 10px;
+    font-size: 19px;
+   
+}
+
+.search
+ button {
+    border: 0;
+    outline: 0;
+    background:  hsla(0, 0%, 100%, 0.70);
+    border-radius: 50%;
+    cursor: pointer;
+    width: 70px;
+    height: 60px;
+    align-content:center;
+
+ }
+
+ .search
+ button img {
+    padding: 1px;
+    height: 30px;
+    margin: 12px 15px;
+    
+ }
+ .weather-icon {
+    width: 170px;
+    margin-top: 30px;
+ }
+
+ .weather h1 {
+    font-size: 80px;
+    font-weight: 600;
+    color: #000000aa;
+
+ }
+
+ .weather h2 {
+    font-size: 45px;
+    font-weight: 600;
+    margin-top: 10px;
+    color: rgba(0, 0, 0, 0.74);
+
+ }
+   .weather h3 {
+    font-size: 45px;
+    font-weight: 900;
+    margin-top: 40px;
+    font-family:Arial, Helvetica, sans-serif;
+    color: rgba(0, 0, 0, 0.765);
+    
+
+   }
+
+ .details {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 15px;
+    margin-top: 50px;
+    
+ }
+
+ .col {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+ }
+
+ .col img {
+    width: 45px;
+    margin-right: 10px;
+ }
+
+ .humidity , .wind ,.aqi , .feel{
+    font-size: 25px;
+    margin-top: -10px;
+ }
+
+.footer{
+   align-items: center;
+   font-weight: 800;
+   font-size: 30px;
+   padding-top: 20px;
+   padding-bottom: 20px;
+   align-content: flex;
+   text-align: center;
+   color: rgba(240, 255, 240, 0.039);
+}
+
+.ent-city {
+   margin-top: 20px;
+   color: rgba(0, 0, 0, 0.742);
+   font-weight: 900;
+   font-size: 30px;
+}
+
+.describe-border {
+   border: solid;
+   border-width: 5px;
+   border-color: rgba(0, 0, 0, 0.426);
+   border-radius: 45px;
+   padding: 20px;
+
+}
