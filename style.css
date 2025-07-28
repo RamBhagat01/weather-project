@@ -11,7 +11,7 @@ body{
 }
 .card {
     width: 90%;
-    max-width: 500px;
+    max-width: auto;
     background: linear-gradient(180deg,rgb(236, 233, 46), rgb(65, 23, 255));
     padding: 40px 10px;
     border-radius: 20px;
@@ -25,13 +25,14 @@ body{
     display: flex;
     align-items: center;
     justify-content:space-between;
-    width: -80px;
+    width: auto;
     padding-left: 8px;
+    padding-right: 8px;
 
 }
 
 .search input {
-    border: 0;
+    border: 10;
     outline: 0;
     background: hsla(0, 0%, 100%, 0.70);
     padding: 10px 20px;
@@ -41,19 +42,21 @@ body{
     flex: 1;
     margin-right: 10px;
     font-size: 19px;
+    
    
 }
 
 .search
  button {
-    border: 0;
+    border: 10;
     outline: 0;
-    background:  hsla(0, 0%, 100%, 0.70);
+    background:  hsla(0, 0%, 100%, 0.919);
     border-radius: 50%;
     cursor: pointer;
-    width: 70px;
+    width: 60px;
     height: 60px;
     align-content:center;
+    margin-left: -60px;
 
  }
 
