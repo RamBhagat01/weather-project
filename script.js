@@ -23,79 +23,88 @@ document.querySelector('.js-button').addEventListener('click', () => {
 
 
 async function generatedata() {
+ 
+    try {
+        //for weather API 
+        const response = await fetch(url + `&q=${city}` );
+        const reply = await response.json();
 
-    //for weather API 
-    const response = await fetch(url + `&q=${city}` );
-    const reply = await response.json();
+        console.log(reply);
 
-    console.log(reply);
+        const temp = reply.main.temp;
+        const hum = reply.main.humidity;
+        const icon = reply.weather[0].main;
+        const desc = (reply.weather[0].description).toUpperCase();
+        const winds = (reply.wind.speed)  * 3.6;
+        const name = (reply.name).toUpperCase();
+        const feel = reply.main.feels_like;
 
-    const temp = reply.main.temp;
-    const hum = reply.main.humidity;
-    const icon = reply.weather[0].main;
-    const desc = (reply.weather[0].description).toUpperCase();
-    const winds = (reply.wind.speed)  * 3.6;
-    const name = (reply.name).toUpperCase();
-    const feel = reply.main.feels_like;
+        //for AQI API........
 
-    //for AQI API........
+        const response2 = await fetch(urlaqi + `&city=${city}`)
+        const reply2 = await response2.json();
 
-    const response2 = await fetch(urlaqi + `&city=${city}`)
-    const reply2 = await response2.json();
+        //console.log(reply2);
 
-    //console.log(reply2);
-
-    const aqi = reply2.overall_aqi;
-    
-
-    //const temp = 
-
-    generatehtml = `
-        <img src="images/${icon}.png" class="weather-icon" >
-        <h2 class="describe-border">${desc}</h2>
-        <h1 class="temp">${(Math.round(temp)).toFixed(0)}°C</h1>
-        <h3 class="city">${name}</h3>
-            
-        <div class="details">
-
-            <div class="col">
-                <img src="images/Humidity.png" >
-                <div>
-                    <p class="humidity">${hum}%</p>
-                    <p>Humidity</p>
-                </div>
-            </div>
-
-            <div class="col">
-                <img src="images/Wind.png" >
-                <div>
-                    <p class="wind">${(Math.round(winds)).toFixed(0)} km/h</p>
-                    <p>Windspeed</p>
-                </div>
-            </div>
-
-        </div>  
+        const aqi = reply2.overall_aqi;
         
-        <div class="details">
 
-            <div class="col">
-                <img src="images/Aqi.png" >
-                <div>
-                    <p class="aqi">${aqi}</p>
-                    <p>AQI</p>
+        //const temp = 
+
+        generatehtml = `
+            <img src="images/${icon}.png" class="weather-icon" >
+            <h2 class="describe-border">${desc}</h2>
+            <h1 class="temp">${(Math.round(temp)).toFixed(0)}°C</h1>
+            <h3 class="city align-css">${name}</h3>
+                
+            <div class="details">
+
+                <div class="col">
+                    <img src="images/Humidity.png" >
+                    <div>
+                        <p class="humidity">${hum || `N.A.`}%</p>
+                        <p>Humidity</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="col">
-                <img src="images/Temperature.png" >
-                <div>
-                    <p class="feel">${feel}°C</p>
-                    <p>Feels like</p>
+                <div class="col">
+                    <img src="images/wind.png" >
+                    <div>
+                        <p class="wind">${(Math.round(winds)).toFixed(0) || `N.A.`} km/h</p>
+                        <p>Windspeed</p>
+                    </div>
                 </div>
-            </div>
 
+            </div>  
+            
+            <div class="details">
+
+                <div class="col">
+                    <img src="images/Aqi.png" >
+                    <div>
+                        <p class="aqi">${aqi || `N.A.`}</p>
+                        <p>AQI</p>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <img src="images/Temperature.png" >
+                    <div>
+                        <p class="feel">${feel || `N.A.`}°C</p>
+                        <p>Feels like</p>
+                    </div>
+                </div>
+
+            </div>
+        `;
+        
+    } catch (error) {
+       generatehtml = `
+        <div class="ent-city">
+            Check City Name & Try Again ! 
         </div>
-    `;
+       `; 
+    }
 
 
 document.querySelector('.weather').innerHTML = generatehtml;
