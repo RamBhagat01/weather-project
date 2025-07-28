@@ -11,7 +11,7 @@ body{
 }
 .card {
     width: 90%;
-    max-width: auto;
+    max-width: 500px;
     background: linear-gradient(180deg,rgb(236, 233, 46), rgb(65, 23, 255));
     padding: 40px 10px;
     border-radius: 20px;
@@ -34,7 +34,7 @@ body{
 .search input {
     border: 10;
     outline: 0;
-    background: hsla(0, 0%, 100%, 0.70);
+    background: hsla(0, 0%, 100%, 0.429);
     padding: 10px 20px;
     height: 60px;
     border-radius: 25px;
@@ -42,6 +42,7 @@ body{
     flex: 1;
     margin-right: 10px;
     font-size: 19px;
+    margin-left: -10px;
     
    
 }
