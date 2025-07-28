@@ -68,7 +68,7 @@ async function generatedata() {
                 </div>
 
                 <div class="col">
-                    <img src="images/wind.png" >
+                    <img src="images/Wind.png" >
                     <div>
                         <p class="wind">${(Math.round(winds)).toFixed(0) || `N.A.`} km/h</p>
                         <p>Windspeed</p>
