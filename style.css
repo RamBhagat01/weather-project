@@ -18,6 +18,7 @@ body{
     text-align: center;
     margin: 50px 20px 0;
     align-content: center;
+    overflow-wrap: break-word;
     
 }
 .search {
